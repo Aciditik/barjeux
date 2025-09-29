@@ -25,6 +25,9 @@ export default function TabLayout() {
           elevation: 5,
         },
         headerShown: false,
+        tabBarLabelStyle: {
+          fontFamily: 'Quicksand-SemiBold',
+        },
         tabBarShowLabel: true,
       }}>
       <Tabs.Screen
