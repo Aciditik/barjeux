@@ -15,7 +15,7 @@ export default function TabLayout() {
           borderTopRightRadius: 20,
           borderBottomRightRadius: 20,
           borderBottomLeftRadius: 20,
-          height: 70,
+          height: 85,
           position: 'absolute',
           bottom: 40,
           shadowColor: '#1a1a1a',
@@ -28,11 +28,12 @@ export default function TabLayout() {
         headerShown: false,
         tabBarLabelStyle: {
           fontFamily: 'Quicksand-SemiBold',
-          fontSize: 12,
-          marginTop: 2,
+          fontSize: 13,
+          marginTop: 4,
         },
         tabBarItemStyle: {
-          paddingVertical: 5,
+          paddingVertical: 8,
+          paddingHorizontal: 4,
         },
         tabBarShowLabel: true,
       }}>
