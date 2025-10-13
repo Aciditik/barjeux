@@ -1,6 +1,17 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 
+type TabIconProps = {
+  color: string;
+  focused: boolean;
+  iconName: keyof typeof Ionicons.glyphMap;
+  iconNameOutline: keyof typeof Ionicons.glyphMap;
+};
+
+function TabIcon({ color, focused, iconName, iconNameOutline }: TabIconProps) {
+  return <Ionicons name={focused ? iconName : iconNameOutline} size={28} color={color} />;
+}
+
 export default function TabLayout() {
   return (
     <Tabs
@@ -42,7 +53,7 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'home' : 'home-outline'} size={28} color={color} />
+            <TabIcon color={color} focused={focused} iconName="home" iconNameOutline="home-outline" />
           ),
         }}
       />
@@ -51,7 +62,7 @@ export default function TabLayout() {
         options={{
           title: 'Search',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'search' : 'search-outline'} size={28} color={color} />
+            <TabIcon color={color} focused={focused} iconName="search" iconNameOutline="search-outline" />
           ),
         }}
       />
@@ -60,7 +71,7 @@ export default function TabLayout() {
         options={{
           title: 'Messages',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'chatbubble' : 'chatbubble-outline'} size={28} color={color} />
+            <TabIcon color={color} focused={focused} iconName="chatbubble" iconNameOutline="chatbubble-outline" />
           ),
         }}
       />
@@ -69,7 +80,7 @@ export default function TabLayout() {
         options={{
           title: 'Profile',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'person' : 'person-outline'} size={28} color={color} />
+            <TabIcon color={color} focused={focused} iconName="person" iconNameOutline="person-outline" />
           ),
         }}
       />
