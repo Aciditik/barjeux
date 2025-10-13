@@ -2,10 +2,10 @@ import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 
 type TabIconProps = {
-  color: string;
-  focused: boolean;
-  iconName: keyof typeof Ionicons.glyphMap;
-  iconNameOutline: keyof typeof Ionicons.glyphMap;
+  readonly color: string;
+  readonly focused: boolean;
+  readonly iconName: keyof typeof Ionicons.glyphMap;
+  readonly iconNameOutline: keyof typeof Ionicons.glyphMap;
 };
 
 function TabIcon({ color, focused, iconName, iconNameOutline }: TabIconProps) {
