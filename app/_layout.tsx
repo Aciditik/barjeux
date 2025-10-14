@@ -3,13 +3,18 @@ import { Stack } from "expo-router";
 import "./global.css";
 
 export default function RootLayout() {
-  const [fontLoaded, error] = useFonts({
+  const [fontLoaded] = useFonts({
     "Quicksand-Regular": require("../assets/fonts/Quicksand-Regular.ttf"),
     "Quicksand-Bold": require("../assets/fonts/Quicksand-Bold.ttf"),
     "Quicksand-Light": require("../assets/fonts/Quicksand-Light.ttf"),
     "Quicksand-Medium": require("../assets/fonts/Quicksand-Medium.ttf"),
     "Quicksand-SemiBold": require("../assets/fonts/Quicksand-SemiBold.ttf"),
   });
+
+  if (!fontLoaded) {
+    return null;
+  }
+
   return (
     <Stack
       screenOptions={{
