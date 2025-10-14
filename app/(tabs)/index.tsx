@@ -50,8 +50,8 @@ export default function HomeScreen() {
               mapType="standard"
               customMapStyle={darkMapStyle}
             >
-              {markers.map((marker, index) => (
-                <Marker key={index} coordinate={marker}>
+              {markers.map((marker) => (
+                <Marker key={marker.name} coordinate={marker}>
                   <Callout>
                     <View>
                       <Text>{marker.name}</Text>
